@@ -25,4 +25,3 @@ jobs:
       - run: ./test macos_xcodespm
       - run: ./test ios_xcodespm
       - run: ./test tvos_xcodespm
-      - run: ./test watchos_xcodespm
