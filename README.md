@@ -1,5 +1,7 @@
 # ViciousMockery
 
+[![Build Status](https://github.com/Badlazzor/ViciousMockery/actions/workflows/ci-xcode.yml/badge.svg)](https://github.com/Badlazzor/ViciousMockery/actions/workflows/ci-xcode.yml)
+
 A minimal mocking library for Swift projects.
 
 ## About
