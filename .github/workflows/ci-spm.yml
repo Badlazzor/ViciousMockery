@@ -1,4 +1,4 @@
-name: CI (Xcode)
+name: CI (SPM)
 
 on:
   push:
