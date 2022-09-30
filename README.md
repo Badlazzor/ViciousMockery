@@ -14,6 +14,8 @@ The full example project can be reached [here](https://github.com/Badlazzor/Vici
 ### Usage in tests
 The tests are using [Quick](https://github.com/Quick/Quick) and [Nimble](https://github.com/Quick/Nimble). If you are not already familiar with them, check them out.
 
+Excerpt from [here](https://github.com/Badlazzor/ViciousMockeryExample/blob/main/Tests/ViciousMockeryExampleTests/SimpleUserTests.swift).
+
 ```swift
 describe("makeThingsHappen") {
     enum TestError: Error {
@@ -41,6 +43,9 @@ describe("makeThingsHappen") {
 Checking if the inputs match a certain `Array` can be done better and more clean, but that needs custom `Matcher`s to be written for Nimble and that will be added as a separate target into this package, not to force people getting that as well if they don't need it.
 
 ### Mock with Stubs
+See files [here](https://github.com/Badlazzor/ViciousMockeryExample/tree/main/Tests/ViciousMockeryExampleTests/Mocks) for examples.
+
+
 ```swift
 import ViciousMockery
 @testable import ViciousMockeryExample
@@ -65,6 +70,8 @@ extension Mock {
 ```
 
 ### MockDataBuilder
+See files [here](https://github.com/Badlazzor/ViciousMockeryExample/tree/main/Tests/ViciousMockeryExampleTests/MockDataBuilders) for examples.
+
 ```swift
 import ViciousMockery
 import Prestidigitation
