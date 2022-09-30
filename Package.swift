@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "ViciousMockery",
     platforms: [
-        .iOS(.v13)
+        .macOS(.v10_10), .iOS(.v9), .tvOS(.v9)
     ],
     products: [
         .library(
