@@ -16,7 +16,9 @@ struct SourceryCommand: CommandPlugin {
         let process = Process()
         process.executableURL = sourceryURL
 
-        process.arguments = []
+        process.arguments = [
+            "--disableCache"
+        ]
 
         try process.run()
         process.waitUntilExit()
