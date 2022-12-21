@@ -1,4 +1,4 @@
-// swift-tools-version: 5.4
+// swift-tools-version: 5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -17,6 +17,7 @@ let package = Package(
             name: "Prestidigitation",
             targets: ["Prestidigitation"]
         ),
+        .plugin(name: "GenerateMocks", targets: ["GenerateMocks"])
     ],
     dependencies: [
         .package(url: "https://github.com/Quick/Quick", from: "5.0.0"),
@@ -32,6 +33,21 @@ let package = Package(
             name: "Prestidigitation",
             dependencies: [],
             path: "Prestidigitation"
+        ),
+        .plugin(
+            name: "GenerateMocks",
+            capability: .command(
+                intent: .custom(
+                    verb: "sourcery-code-generation",
+                    description: "Generates Swift files from a given set of inputs"
+                ),
+                permissions: [.writeToPackageDirectory(reason: "File generation for mocks")]
+            ),
+            dependencies: ["Sourcery"]
+        ),
+        .binaryTarget(
+            name: "Sourcery",
+            path: "Sourcery.artifactbundle"
         ),
         .testTarget(
             name: "ViciousMockeryTests",

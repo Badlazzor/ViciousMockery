@@ -1,0 +1,46 @@
+import ViciousMockery
+import Prestidigitation
+{% for import in argument.imports -%}
+import {{ import }}
+{% endfor %}
+
+{% for import in argument.testableImports -%}
+@testable import {{ import }}
+{% endfor %}
+
+{% macro validVariableName name %}{{ name|replace:"`","" }}{% endmacro -%}
+
+{% macro firstCaseName type %}{{ type.cases.first.name }}{% endmacro -%}
+
+{% macro firstCaseParams type -%}
+{% for associatedValue in type.cases.first.associatedValues -%}
+{% if forloop.first %}({% endif -%}{% if associatedValue.localName != nil %}{{associatedValue.localName}}: {% endif -%}makeEmpty(.empty){% if forloop.last %}){% endif -%}
+{% endfor -%}
+{% endmacro -%}
+
+// swiftlint:disable all
+{% for type in types.enums where type|annotated:"EmptyInitializable" %}
+extension EmptyInitializing where T == {{ type.name }} {
+    {% for contained in type.containedTypes %}
+    typealias {{contained.localName}} = {{contained.name}}
+    {% endfor %}
+    public static let empty = EmptyInitializing { .{{ type.cases.first.name }}{% call firstCaseParams type %} }
+}{% if not forloop.last %}
+
+{% endif %}
+{% endfor %}
+
+{% for type in types.structs where type|annotated:"Mockable" %}
+extension {{ type.name }}: Mockable {
+    public static var mock: MockBuilder<{{ type.name }}> {
+        MockBuilder<{{ type.name }}> { mockData in
+            {{ type.name }}(
+                {% for var in type.storedVariables %}
+                {% call validVariableName var.name %}: mockData.value(of: \.{% call validVariableName var.name %}, .empty){% if not forloop.last %},{% endif %}
+                {% endfor %}
+            )
+        }
+    }
+}
+{% endfor %}
+// swiftlint:enable all
