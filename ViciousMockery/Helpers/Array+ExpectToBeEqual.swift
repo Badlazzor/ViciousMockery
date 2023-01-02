@@ -2,7 +2,7 @@ import CustomDump
 import XCTest
 
 extension Array {
-    func expectToEqual<T0, T1>(
+    public func expectToEqual<T0, T1>(
         actual: [(T0, T1)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -22,7 +22,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2>(
+    public func expectToEqual<T0, T1, T2>(
         actual: [(T0, T1, T2)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -43,7 +43,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2, T3>(
+    public func expectToEqual<T0, T1, T2, T3>(
         actual: [(T0, T1, T2, T3)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -65,7 +65,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2, T3, T4>(
+    public func expectToEqual<T0, T1, T2, T3, T4>(
         actual: [(T0, T1, T2, T3, T4)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -88,7 +88,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2, T3, T4, T5>(
+    public func expectToEqual<T0, T1, T2, T3, T4, T5>(
         actual: [(T0, T1, T2, T3, T4, T5)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -112,7 +112,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2, T3, T4, T5, T6>(
+    public func expectToEqual<T0, T1, T2, T3, T4, T5, T6>(
         actual: [(T0, T1, T2, T3, T4, T5, T6)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -137,7 +137,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2, T3, T4, T5, T6, T7>(
+    public func expectToEqual<T0, T1, T2, T3, T4, T5, T6, T7>(
         actual: [(T0, T1, T2, T3, T4, T5, T6, T7)],
         file: StaticString = #filePath,
         line: UInt = #line
@@ -163,7 +163,7 @@ extension Array {
 }
 
 extension Array {
-    func expectToEqual<T0, T1, T2, T3, T4, T5, T6, T7, T8>(
+    public func expectToEqual<T0, T1, T2, T3, T4, T5, T6, T7, T8>(
         actual: [(T0, T1, T2, T3, T4, T5, T6, T7, T8)],
         file: StaticString = #filePath,
         line: UInt = #line

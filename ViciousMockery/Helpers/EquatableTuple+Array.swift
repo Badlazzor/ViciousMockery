@@ -1,5 +1,5 @@
 extension Array {
-    func asEqautableTupleArray<T0, T1>() -> [EquatableTuple2<T0, T1>]
+    public func asEqautableTupleArray<T0, T1>() -> [EquatableTuple2<T0, T1>]
     where (T0, T1) == Element,
           T0: Equatable,
           T1: Equatable
@@ -9,7 +9,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2>() -> [EquatableTuple3<T0, T1, T2>]
+    public func asEqautableTupleArray<T0, T1, T2>() -> [EquatableTuple3<T0, T1, T2>]
     where (T0, T1, T2) == Element,
           T0: Equatable,
           T1: Equatable,
@@ -20,7 +20,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2, T3>() -> [EquatableTuple4<T0, T1, T2, T3>]
+    public func asEqautableTupleArray<T0, T1, T2, T3>() -> [EquatableTuple4<T0, T1, T2, T3>]
     where (T0, T1, T2, T3) == Element,
           T0: Equatable,
           T1: Equatable,
@@ -32,7 +32,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2, T3, T4>() -> [EquatableTuple5<T0, T1, T2, T3, T4>]
+    public func asEqautableTupleArray<T0, T1, T2, T3, T4>() -> [EquatableTuple5<T0, T1, T2, T3, T4>]
     where (T0, T1, T2, T3, T4) == Element,
           T0: Equatable,
           T1: Equatable,
@@ -45,7 +45,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2, T3, T4, T5>() -> [EquatableTuple6<T0, T1, T2, T3, T4, T5>]
+    public func asEqautableTupleArray<T0, T1, T2, T3, T4, T5>() -> [EquatableTuple6<T0, T1, T2, T3, T4, T5>]
     where (T0, T1, T2, T3, T4, T5) == Element,
           T0: Equatable,
           T1: Equatable,
@@ -59,7 +59,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2, T3, T4, T5, T6>() -> [EquatableTuple7<T0, T1, T2, T3, T4, T5, T6>]
+    public func asEqautableTupleArray<T0, T1, T2, T3, T4, T5, T6>() -> [EquatableTuple7<T0, T1, T2, T3, T4, T5, T6>]
     where (T0, T1, T2, T3, T4, T5, T6) == Element,
           T0: Equatable,
           T1: Equatable,
@@ -74,7 +74,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2, T3, T4, T5, T6, T7>() -> [EquatableTuple8<T0, T1, T2, T3, T4, T5, T6, T7>]
+    public func asEqautableTupleArray<T0, T1, T2, T3, T4, T5, T6, T7>() -> [EquatableTuple8<T0, T1, T2, T3, T4, T5, T6, T7>]
     where (T0, T1, T2, T3, T4, T5, T6, T7) == Element,
           T0: Equatable,
           T1: Equatable,
@@ -90,7 +90,7 @@ extension Array {
 }
 
 extension Array {
-    func asEqautableTupleArray<T0, T1, T2, T3, T4, T5, T6, T7, T8>() -> [EquatableTuple9<T0, T1, T2, T3, T4, T5, T6, T7, T8>]
+    public func asEqautableTupleArray<T0, T1, T2, T3, T4, T5, T6, T7, T8>() -> [EquatableTuple9<T0, T1, T2, T3, T4, T5, T6, T7, T8>]
     where (T0, T1, T2, T3, T4, T5, T6, T7, T8) == Element,
           T0: Equatable,
           T1: Equatable,
