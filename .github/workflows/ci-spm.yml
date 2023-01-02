@@ -13,7 +13,7 @@ on:
 jobs:
   xcode_spm:
     name: Xcode ${{ matrix.xcode }} (Swift Package)
-    runs-on: macos-11
+    runs-on: macos-12
     strategy:
       matrix:
         xcode: ["14.1"]
