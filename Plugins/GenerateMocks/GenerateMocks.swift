@@ -25,11 +25,18 @@ struct SourceryCommand: CommandPlugin {
         let sourceryExecutable = try context.tool(named: "sourcery")
         let sourceryURL = URL(fileURLWithPath: sourceryExecutable.path.string)
 
+        let templatesPath = sourceryExecutable.path
+            .removingLastComponent()
+            .removingLastComponent()
+            .removingLastComponent()
+            .removingLastComponent()
+            .appending(subpath: "Templates")
+
         let process = Process()
         process.executableURL = sourceryURL
 
         let configPath = context.pluginWorkDirectory.appending(subpath: ".sourcery.yml")
-        makeSourceryYaml(at: configPath, for: target, context: context)
+        makeSourceryYaml(at: configPath, for: target, context: context, templatesPath: templatesPath)
         process.arguments = [
             "--disableCache",
             "--config",
@@ -62,12 +69,13 @@ struct SourceryCommand: CommandPlugin {
             }
     }
 
-    func makeSourceryYaml(at configPath: Path, for target: Target, context: PluginContext) {
+    func makeSourceryYaml(at configPath: Path, for target: Target, context: PluginContext, templatesPath: Path) {
         var str = [
             "sources:\n",
             "  - \(target.directory.string)\n",
             "templates:\n",
-            "  - \(context.package.directory.appending(subpath: "/Templates/Mockable.stencil").string)\n",
+            //"  - \(context.package.directory.appending(subpath: "/Templates/Mockable.stencil").string)\n",
+            "  - \(templatesPath.string)\n",
             "output:\n",
             "  \(context.package.directory.appending(subpath: "/Mocks/\(target.name)/Generated").string)\n",
             "args:\n"

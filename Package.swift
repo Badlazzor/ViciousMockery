@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "ViciousMockery",
     platforms: [
-        .macOS(.v10_10), .iOS(.v9), .tvOS(.v9)
+        .macOS(.v10_15), .iOS(.v9), .tvOS(.v9)
     ],
     products: [
         .library(
@@ -21,12 +21,15 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Quick/Quick", from: "5.0.0"),
-        .package(url: "https://github.com/Quick/Nimble", from: "10.0.0")
+        .package(url: "https://github.com/Quick/Nimble", from: "10.0.0"),
+        .package(url: "https://github.com/pointfreeco/swift-custom-dump", from: "0.6.1")
     ],
     targets: [
         .target(
             name: "ViciousMockery",
-            dependencies: [],
+            dependencies: [
+                .product(name: "CustomDump", package: "swift-custom-dump")
+            ],
             path: "ViciousMockery"
         ),
         .target(
